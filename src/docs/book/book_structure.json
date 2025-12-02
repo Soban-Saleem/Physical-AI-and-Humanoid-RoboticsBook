@@ -1,0 +1,301 @@
+{
+  "title": "Physical AI and Humanoid Robotics: A Comprehensive Guide",
+  "subtitle": "From Theory to Implementation",
+  "authors": [
+    "Physical AI Development Team"
+  ],
+  "publisher": "Panaversity Press",
+  "isbn": "978-0-123456-78-9",
+  "edition": "First Edition",
+  "year": "2025",
+  "front_matter": {
+    "title_page": "title-page.md",
+    "copyright": "copyright.md",
+    "dedication": "dedication.md",
+    "table_of_contents": "table-of-contents.md",
+    "preface": "preface.md",
+    "acknowledgments": "acknowledgments.md",
+    "about_authors": "about-authors.md"
+  },
+  "parts": {
+    "part_1": {
+      "title": "Foundations of Physical AI",
+      "description": "Theoretical foundations and conceptual framework",
+      "chapters": {
+        "chapter_1": {
+          "title": "Introduction to Physical AI",
+          "sections": {
+            "1.1": "What is Physical AI?",
+            "1.2": "Historical Development",
+            "1.3": "Applications and Impact",
+            "1.4": "Challenges and Opportunities",
+            "1.5": "Book Overview and Learning Path"
+          }
+        },
+        "chapter_2": {
+          "title": "Embodied Intelligence Theory",
+          "sections": {
+            "2.1": "Principles of Embodied Cognition",
+            "2.2": "Sensorimotor Integration",
+            "2.3": "Cognitive Architectures",
+            "2.4": "Learning and Development",
+            "2.5": "Morphological Intelligence"
+          }
+        },
+        "chapter_3": {
+          "title": "Hardware Foundations",
+          "sections": {
+            "3.1": "Computing Platforms",
+            "3.2": "Sensors and Perception",
+            "3.3": "Actuators and Control",
+            "3.4": "Power and Thermal Management",
+            "3.5": "System Integration"
+          }
+        },
+        "chapter_4": {
+          "title": "Software Environment Setup",
+          "sections": {
+            "4.1": "Operating System Configuration",
+            "4.2": "Development Tools and IDEs",
+            "4.3": "Version Control and Collaboration",
+            "4.4": "Simulation Frameworks",
+            "4.5": "Testing and Validation"
+          }
+        }
+      }
+    },
+    "part_2": {
+      "title": "The Robotic Nervous System (ROS 2)",
+      "description": "Middleware and communication for robot systems",
+      "chapters": {
+        "chapter_5": {
+          "title": "ROS 2 Fundamentals",
+          "sections": {
+            "5.1": "Architecture and Design Principles",
+            "5.2": "Installation and Setup",
+            "5.3": "Core Concepts: Nodes and Topics",
+            "5.4": "Services and Actions",
+            "5.5": "Parameters and Launch Files"
+          }
+        },
+        "chapter_6": {
+          "title": "ROS 2 Development",
+          "sections": {
+            "6.1": "Package Creation and Management",
+            "6.2": "Python Programming with rclpy",
+            "6.3": "C++ Programming with rclcpp",
+            "6.4": "Custom Messages and Interfaces",
+            "6.5": "Debugging and Profiling"
+          }
+        },
+        "chapter_7": {
+          "title": "Advanced ROS 2 Features",
+          "sections": {
+            "7.1": "Quality of Service (QoS)",
+            "7.2": "Security and DDS",
+            "7.3": "Component and Lifecycle Management",
+            "7.4": "Real-time Capabilities",
+            "7.5": "Multi-robot Systems"
+          }
+        }
+      }
+    },
+    "part_3": {
+      "title": "Digital Twin and Simulation",
+      "description": "Virtual environments and physics simulation",
+      "chapters": {
+        "chapter_8": {
+          "title": "Gazebo Simulation Environment",
+          "sections": {
+            "8.1": "Installation and Configuration",
+            "8.2": "World Building and Environment Design",
+            "8.3": "Robot Modeling with URDF/SDF",
+            "8.4": "Physics Simulation and Dynamics",
+            "8.5": "Sensor Simulation and Noise Modeling"
+          }
+        },
+        "chapter_9": {
+          "title": "Unity for Robotics",
+          "sections": {
+            "9.1": "Unity Setup for Robotics",
+            "9.2": "High-Fidelity Rendering and Graphics",
+            "9.3": "Unity ROS Bridge",
+            "9.4": "Human-Robot Interaction Simulation",
+            "9.5": "Performance Optimization"
+          }
+        },
+        "chapter_10": {
+          "title": "Simulation-to-Reality Transfer",
+          "sections": {
+            "10.1": "Domain Adaptation Techniques",
+            "10.2": "Reality Gap Analysis",
+            "10.3": "Hardware-in-the-Loop Testing",
+            "10.4": "Validation and Verification",
+            "10.5": "Best Practices for Sim-to-Real"
+          }
+        }
+      }
+    },
+    "part_4": {
+      "title": "AI-Powered Perception and Control",
+      "description": "NVIDIA Isaac and advanced AI capabilities",
+      "chapters": {
+        "chapter_11": {
+          "title": "NVIDIA Isaac Platform",
+          "sections": {
+            "11.1": "Isaac SDK Overview and Setup",
+            "11.2": "Isaac Sim: Photorealistic Simulation",
+            "11.3": "Isaac ROS: Hardware-Accelerated Packages",
+            "11.4": "Synthetic Data Generation",
+            "11.5": "Isaac Manipulator and Navigation"
+          }
+        },
+        "chapter_12": {
+          "title": "Computer Vision and Perception",
+          "sections": {
+            "12.1": "Camera Calibration and Stereo Vision",
+            "12.2": "Object Detection and Recognition",
+            "12.3": "Semantic Segmentation",
+            "12.4": "Visual SLAM and Localization",
+            "12.5": "Multi-Modal Sensor Fusion"
+          }
+        },
+        "chapter_13": {
+          "title": "Motion Planning and Control",
+          "sections": {
+            "13.1": "Path Planning Algorithms",
+            "13.2": "Navigation Stack (Nav2)",
+            "13.3": "Manipulation Planning (MoveIt 2)",
+            "13.4": "Behavior Trees and State Machines",
+            "13.5": "Safety and Collision Avoidance"
+          }
+        }
+      }
+    },
+    "part_5": {
+      "title": "Vision-Language-Action Integration",
+      "description": "LLMs and multimodal AI for robotics",
+      "chapters": {
+        "chapter_14": {
+          "title": "Voice and Language Processing",
+          "sections": {
+            "14.1": "Speech Recognition with Whisper",
+            "14.2": "Natural Language Understanding",
+            "14.3": "Voice Command Processing",
+            "14.4": "Error Handling and Fallbacks",
+            "14.5": "Multilingual Support"
+          }
+        },
+        "chapter_15": {
+          "title": "Large Language Models for Robotics",
+          "sections": {
+            "15.1": "LLM Integration Architecture",
+            "15.2": "Task Planning with Language Models",
+            "15.3": "Context Management and Memory",
+            "15.4": "Grounding Language to Actions",
+            "15.5": "Safety and Reliability"
+          }
+        },
+        "chapter_16": {
+          "title": "Multimodal AI and Vision-Language Models",
+          "sections": {
+            "16.1": "Vision-Language Model Integration",
+            "16.2": "Scene Understanding and Description",
+            "16.3": "Visual Question Answering",
+            "16.4": "Embodied AI Agents",
+            "16.5": "Human-Robot Communication"
+          }
+        }
+      }
+    },
+    "part_6": {
+      "title": "Humanoid Robotics Applications",
+      "description": "Real-world applications and case studies",
+      "chapters": {
+        "chapter_17": {
+          "title": "Bipedal Locomotion",
+          "sections": {
+            "17.1": "Walking Dynamics and Control",
+            "17.2": "Balance and Stability",
+            "17.3": "Terrain Adaptation",
+            "17.4": "Gait Generation and Optimization",
+            "17.5": "Fall Recovery and Safety"
+          }
+        },
+        "chapter_18": {
+          "title": "Manipulation and Grasping",
+          "sections": {
+            "18.1": "Hand Design and Kinematics",
+            "18.2": "Grasp Planning and Execution",
+            "18.3": "Tactile Sensing and Force Control",
+            "18.4": "Bimanual Coordination",
+            "18.5": "Tool Use and Adaptation"
+          }
+        },
+        "chapter_19": {
+          "title": "Social Interaction and Communication",
+          "sections": {
+            "19.1": "Facial Expression and Emotion",
+            "19.2": "Gesture Recognition and Generation",
+            "19.3": "Social Navigation and Proxemics",
+            "19.4": "Theory of Mind and Intent Recognition",
+            "19.5": "Cultural Adaptation and Personalization"
+          }
+        }
+      }
+    },
+    "part_7": {
+      "title": "Advanced Topics and Future Directions",
+      "description": "Cutting-edge research and emerging technologies",
+      "chapters": {
+        "chapter_20": {
+          "title": "Learning and Adaptation",
+          "sections": {
+            "20.1": "Reinforcement Learning for Robotics",
+            "20.2": "Imitation and Demonstration Learning",
+            "20.3": "Meta-Learning and Few-Shot Adaptation",
+            "20.4": "Continual Learning and Memory",
+            "20.5": "Transfer Learning Across Domains"
+          }
+        },
+        "chapter_21": {
+          "title": "Safety and Ethics",
+          "sections": {
+            "21.1": "Robot Safety Standards and Regulations",
+            "21.2": "Ethical Considerations in Robotics",
+            "21.3": "Human-Robot Interaction Guidelines",
+            "21.4": "Privacy and Data Protection",
+            "21.5": "Societal Impact and Responsibility"
+          }
+        },
+        "chapter_22": {
+          "title": "Emerging Technologies",
+          "sections": {
+            "22.1": "Neuromorphic Computing",
+            "22.2": "Quantum Sensors and Computing",
+            "22.3": "Soft Robotics and Bio-inspired Design",
+            "22.4": "Swarm Robotics and Collective Intelligence",
+            "22.5": "Future Research Directions"
+          }
+        }
+      }
+    }
+  },
+  "back_matter": {
+    "appendix_a": "Hardware Specifications Reference",
+    "appendix_b": "Software Installation Guides",
+    "appendix_c": "Troubleshooting and FAQ",
+    "appendix_d": "Code Examples Repository",
+    "glossary": "glossary.md",
+    "bibliography": "bibliography.md",
+    "index": "index.md"
+  },
+  "index_terms": {
+    "technical_terms": {},
+    "people": {},
+    "companies": {},
+    "products": {},
+    "algorithms": {},
+    "concepts": {}
+  }
+}

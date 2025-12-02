@@ -1,0 +1,34 @@
+{
+  "placeholderImages": [
+    {
+      "id": "logo",
+      "description": "The PhysAI Handbook logo.",
+      "imageUrl": "https://images.unsplash.com/photo-1613191662892-ff0f975fe033?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyb2JvdCUyMGxvZ298ZW58MHx8fHwxNzY0Njc3NTUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robot logo"
+    },
+    {
+      "id": "hero",
+      "description": "A hero image showing a humanoid robot interacting with its environment.",
+      "imageUrl": "https://images.unsplash.com/photo-1717347424091-08275b73c918?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxodW1hbm9pZCUyMHJvYm90fGVufDB8fHx8MTc2NDY3NzU1Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "humanoid robot"
+    },
+    {
+      "id": "ros-diagram",
+      "description": "A diagram illustrating the ROS 2 architecture.",
+      "imageUrl": "https://images.unsplash.com/photo-1753715613388-7e03410b1dce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhcmNoaXRlY3R1cmUlMjBkaWFncmFtfGVufDB8fHx8MTc2NDY1MTkyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "architecture diagram"
+    },
+    {
+      "id": "gazebo-sim",
+      "description": "A screenshot of a robot simulation in Gazebo.",
+      "imageUrl": "https://images.unsplash.com/photo-1763788427927-87bc7c1fbcf7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxyb2JvdCUyMHNpbXVsYXRpb258ZW58MHx8fHwxNzY0Njc3NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robot simulation"
+    },
+    {
+      "id": "isaac-sim",
+      "description": "A screenshot of a photorealistic simulation in NVIDIA Isaac Sim.",
+      "imageUrl": "https://images.unsplash.com/photo-1732871706369-73c5e4d27e38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwaG90b3JlYWxpc3RpYyUyMHNpbXVsYXRpb258ZW58MHx8fHwxNzY0Njc3NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "photorealistic simulation"
+    }
+  ]
+}
