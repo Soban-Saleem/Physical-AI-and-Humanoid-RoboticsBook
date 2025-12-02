@@ -64,7 +64,7 @@ export function PageContextProvider({ children }: { children: ReactNode }) {
       const selection = window.getSelection();
       const text = selection?.toString().trim();
 
-      if (text) {
+      if (text && selection && selection.rangeCount > 0) {
         const range = selection.getRangeAt(0);
         const rect = range.getBoundingClientRect();
         

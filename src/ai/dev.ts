@@ -1,5 +1,4 @@
-import { config } from 'dotenv';
-config();
+// Environment variables are handled by Next.js automatically
 
 import '@/ai/flows/generate-chapter-content.ts';
 import '@/ai/flows/summarize-research-papers.ts';

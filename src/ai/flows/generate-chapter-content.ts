@@ -1,4 +1,4 @@
-'use server';
+// Server actions disabled for static export
 
 /**
  * @fileOverview AI-powered chapter content generation flow.

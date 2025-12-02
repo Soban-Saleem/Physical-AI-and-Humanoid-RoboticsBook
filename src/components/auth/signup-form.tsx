@@ -32,7 +32,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { useAuth, type UserExpertise } from '@/hooks/use-auth';
+import { useAuth } from '@/hooks/use-auth';
+import { type UserExpertise } from '@/context/auth-context';
 import { Logo } from '../shared/logo';
 import { Loader2 } from 'lucide-react';
 

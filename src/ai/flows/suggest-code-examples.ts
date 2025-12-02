@@ -1,4 +1,4 @@
-'use server';
+// Server actions disabled for static export
 
 /**
  * @fileOverview An AI agent for suggesting code examples for robotics concepts.
@@ -8,8 +8,8 @@
  * - SuggestCodeExamplesOutput - The return type for the suggestCodeExamples function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { model } from '@/ai/genkit';
+import { z } from 'zod';
 
 const SuggestCodeExamplesInputSchema = z.object({
   roboticsConcept: z.string().describe('The robotics concept to generate code examples for.'),
@@ -26,31 +26,38 @@ const SuggestCodeExamplesOutputSchema = z.object({
 export type SuggestCodeExamplesOutput = z.infer<typeof SuggestCodeExamplesOutputSchema>;
 
 export async function suggestCodeExamples(input: SuggestCodeExamplesInput): Promise<SuggestCodeExamplesOutput> {
-  return suggestCodeExamplesFlow(input);
-}
+  try {
+    const prompt = `You are an expert robotics software engineer. Generate a code example for the following robotics concept using the specified programming language and Robot Operating System.
 
-const prompt = ai.definePrompt({
-  name: 'suggestCodeExamplesPrompt',
-  input: {schema: SuggestCodeExamplesInputSchema},
-  output: {schema: SuggestCodeExamplesOutputSchema},
-  prompt: `You are an expert robotics software engineer. Generate a code example for the following robotics concept using the specified programming language and Robot Operating System.
+Robotics Concept: ${input.roboticsConcept}
+Programming Language: ${input.programmingLanguage}
+Robot Operating System: ${input.robotOperatingSystem || 'ROS 2'}
+Code Type: ${input.codeType || 'basic implementation'}
 
-Robotics Concept: {{{roboticsConcept}}}
-Programming Language: {{{programmingLanguage}}}
-Robot Operating System: {{robotOperatingSystem}}
-Code Type: {{codeType}}
+Provide a well-commented code example and an explanation of how it works.
 
-Provide a well-commented code example and an explanation of how it works.`, 
-});
+Format your response as:
+CODE EXAMPLE:
+[your code here]
 
-const suggestCodeExamplesFlow = ai.defineFlow(
-  {
-    name: 'suggestCodeExamplesFlow',
-    inputSchema: SuggestCodeExamplesInputSchema,
-    outputSchema: SuggestCodeExamplesOutputSchema,
-  },
-  async input => {
-    const {output} = await prompt(input);
-    return output!;
+EXPLANATION:
+[your explanation here]`;
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+
+    // Parse the response to extract code and explanation
+    const parts = text.split('EXPLANATION:');
+    const codeExample = parts[0].replace('CODE EXAMPLE:', '').trim();
+    const explanation = parts[1] ? parts[1].trim() : 'Code example for ' + input.roboticsConcept;
+
+    return { codeExample, explanation };
+  } catch (error) {
+    console.error('Error in suggestCodeExamples:', error);
+    return {
+      codeExample: `# Example code for ${input.roboticsConcept}\n# Implementation would go here`,
+      explanation: `Example implementation for ${input.roboticsConcept} concept.`
+    };
   }
-);
+}

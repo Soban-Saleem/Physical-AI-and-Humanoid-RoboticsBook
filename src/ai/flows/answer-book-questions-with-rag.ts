@@ -1,4 +1,4 @@
-'use server';
+// Server actions disabled for static export
 /**
  * @fileOverview A RAG chatbot for answering questions about the textbook content.
  *

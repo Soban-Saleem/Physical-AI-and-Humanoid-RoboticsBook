@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, FormEvent, useEffect } from 'react';
-import { usePopper } from 'react-popper';
 import { usePageContext } from '@/context/page-context';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card';
 import { Textarea } from '../ui/textarea';
@@ -22,10 +21,6 @@ export function TextSelectionPopover() {
   } = usePageContext();
 
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
-  const { styles, attributes } = usePopper(popoverRef.current, popperElement, {
-    placement: 'bottom-start',
-    modifiers: [{ name: 'offset', options: { offset: [0, 8] } }],
-  });
 
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
@@ -72,9 +67,7 @@ export function TextSelectionPopover() {
   return (
     <div
       ref={setPopperElement}
-      style={styles.popper}
-      {...attributes.popper}
-      className="z-50 w-[90vw] max-w-md"
+      className="fixed z-50 w-[90vw] max-w-md top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
       data-radix-popper-content-wrapper // Add this attribute for the click-outside logic
     >
       <Card className="shadow-2xl">

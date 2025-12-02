@@ -1,4 +1,4 @@
-'use server';
+// Server actions disabled for static export
 
 /**
  * @fileOverview A flow for translating text to a specified language.
