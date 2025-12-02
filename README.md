@@ -8,6 +8,14 @@ A comprehensive, AI-powered textbook for teaching Physical AI and Humanoid Robot
 
 📹 **Demo Video**: [90-second feature demonstration](https://your-demo-video-link)
 
+## 🌟 **Live Features**
+- 🤖 **RAG Chatbot**: Ask questions about any textbook content
+- 🎯 **Smart Personalization**: Content adapts to your expertise level  
+- 🌍 **Urdu Translation**: Complete RTL support with cultural adaptation
+- 📚 **Complete Curriculum**: 7 parts, 22 chapters, 110+ sections
+- 💻 **Interactive Learning**: Code examples, hardware configurator
+- 🔐 **User Profiles**: Personalized learning paths based on background
+
 ## 🏆 Hackathon Features
 
 ### Core Requirements (100 Points)
