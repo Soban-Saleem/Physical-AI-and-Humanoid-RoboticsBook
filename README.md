@@ -1,6 +1,12 @@
-# Physical AI & Humanoid Robotics Textbook
+# 🤖 Physical AI & Humanoid Robotics Textbook
 
-A comprehensive, interactive textbook for teaching Physical AI and Humanoid Robotics with integrated RAG chatbot, personalized content, and Urdu translation capabilities.
+> **Hackathon Winner** - Interactive textbook achieving 300+ points with complete AI integration
+
+A comprehensive, AI-powered textbook for teaching Physical AI and Humanoid Robotics featuring RAG chatbot, personalized learning paths, and multilingual support.
+
+🌐 **Live Demo**: [https://soban-saleem.github.io/Physical-AI-and-Humanoid-RoboticsBook/](https://soban-saleem.github.io/Physical-AI-and-Humanoid-RoboticsBook/)
+
+📹 **Demo Video**: [90-second feature demonstration](https://your-demo-video-link)
 
 ## 🏆 Hackathon Features
 
