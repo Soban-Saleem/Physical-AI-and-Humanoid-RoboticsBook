@@ -7,8 +7,8 @@
  * - AnswerBookQuestionsWithRAGOutput - The return type for the answerBookQuestionsWithRAG function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { model } from '@/ai/genkit';
+import { z } from 'zod';
 
 const MessageSchema = z.object({
   role: z.enum(['user', 'assistant']),
@@ -28,43 +28,26 @@ const AnswerBookQuestionsWithRAGOutputSchema = z.object({
 export type AnswerBookQuestionsWithRAGOutput = z.infer<typeof AnswerBookQuestionsWithRAGOutputSchema>;
 
 export async function answerBookQuestionsWithRAG(input: AnswerBookQuestionsWithRAGInput): Promise<AnswerBookQuestionsWithRAGOutput> {
-  return answerBookQuestionsWithRAGFlow(input);
-}
+  try {
+    const historyText = input.history?.map(msg => `${msg.role}: ${msg.content}`).join('\n') || '';
+    
+    const prompt = `You are a helpful chatbot answering questions about the content of a Physical AI & Humanoid Robotics textbook.
 
-const prompt = ai.definePrompt({
-  name: 'answerBookQuestionsWithRAGPrompt',
-  input: {schema: AnswerBookQuestionsWithRAGInputSchema},
-  output: {schema: AnswerBookQuestionsWithRAGOutputSchema},
-  prompt: `You are a helpful chatbot answering questions about the content of a Physical AI & Humanoid Robotics textbook.
+${historyText ? `Conversation History:\n${historyText}\n` : ''}
 
-  Use the conversation history to provide context for the user's question.
+${input.selectedText ? `Selected Text:\n${input.selectedText}\n` : ''}
 
-  {{#if history}}
-  Conversation History:
-  {{#each history}}
-  {{this.role}}: {{{this.content}}}
-  {{/each}}
-  {{/if}}
+Question: ${input.question}
 
-  Answer the question based on the following information:
+Please provide a helpful, accurate answer based on the context provided.`;
 
-  {{#if selectedText}}
-  Selected Text:
-  {{selectedText}}
-  {{/if}}
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const answer = response.text();
 
-  Question: {{{question}}}
-  `,
-});
-
-const answerBookQuestionsWithRAGFlow = ai.defineFlow(
-  {
-    name: 'answerBookQuestionsWithRAGFlow',
-    inputSchema: AnswerBookQuestionsWithRAGInputSchema,
-    outputSchema: AnswerBookQuestionsWithRAGOutputSchema,
-  },
-  async input => {
-    const {output} = await prompt(input);
-    return output!;
+    return { answer };
+  } catch (error) {
+    console.error('Error in answerBookQuestionsWithRAG:', error);
+    return { answer: "I'm sorry, I encountered an error while processing your question. Please try again." };
   }
-);
+}

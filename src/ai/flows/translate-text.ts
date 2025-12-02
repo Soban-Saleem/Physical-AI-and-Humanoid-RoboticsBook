@@ -8,8 +8,8 @@
  * - TranslateTextOutput - The return type for the translateText function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { model } from '@/ai/genkit';
+import { z } from 'zod';
 
 const TranslateTextInputSchema = z.object({
   textToTranslate: z.string().describe('The text content to be translated.'),
@@ -23,27 +23,19 @@ const TranslateTextOutputSchema = z.object({
 export type TranslateTextOutput = z.infer<typeof TranslateTextOutputSchema>;
 
 export async function translateText(input: TranslateTextInput): Promise<TranslateTextOutput> {
-  return translateTextFlow(input);
-}
-
-const translateTextPrompt = ai.definePrompt({
-  name: 'translateTextPrompt',
-  input: {schema: TranslateTextInputSchema},
-  output: {schema: TranslateTextOutputSchema},
-  prompt: `Translate the following text into {{targetLanguage}}. Preserve the original formatting, including markdown for headings, lists, and bold text. Do not add any extra commentary or explanations, just provide the direct translation.
+  try {
+    const prompt = `Translate the following text into ${input.targetLanguage}. Preserve the original formatting, including markdown for headings, lists, and bold text. Do not add any extra commentary or explanations, just provide the direct translation.
 
 Text to translate:
-{{{textToTranslate}}}`,
-});
+${input.textToTranslate}`;
 
-const translateTextFlow = ai.defineFlow(
-  {
-    name: 'translateTextFlow',
-    inputSchema: TranslateTextInputSchema,
-    outputSchema: TranslateTextOutputSchema,
-  },
-  async input => {
-    const {output} = await translateTextPrompt(input);
-    return output!;
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const translatedText = response.text();
+
+    return { translatedText };
+  } catch (error) {
+    console.error('Error in translateText:', error);
+    return { translatedText: input.textToTranslate }; // Return original text on error
   }
-);
+}

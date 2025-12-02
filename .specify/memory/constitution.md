@@ -1,50 +1,65 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version: 1.0.0 (initial)
+- Project: Physical AI & Humanoid Robotics Textbook - Hackathon Submission
+- Ratification: 2024-12-02
+- Core focus: Hackathon excellence + educational innovation
+- Templates: All aligned with hackathon requirements
+-->
+
+# Project Constitution
+
+**Project**: Physical AI & Humanoid Robotics Textbook  
+**Version**: 1.0.0  
+**Ratification Date**: 2024-12-02  
+**Last Amended**: 2024-12-02
+
+## Purpose
+
+This project delivers a comprehensive, interactive textbook for teaching Physical AI & Humanoid Robotics, designed as a hackathon submission that meets all requirements while establishing a foundation for educational excellence in embodied intelligence.
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### 1. Hackathon Excellence
+**Rule**: MUST achieve 100% of base requirements (100 points) plus ALL bonus features (200+ points) for maximum scoring.
+**Rationale**: Competition submission requiring demonstration of technical excellence across AI/Spec-driven development, RAG chatbot, Better Auth, personalization, and Urdu translation.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### 2. Educational Innovation  
+**Rule**: Content MUST be technically accurate, pedagogically sound, and demonstrate real-world Physical AI applications.
+**Rationale**: This textbook will be used by students learning cutting-edge robotics and embodied intelligence concepts.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### 3. AI-First Integration
+**Rule**: ALL AI features (RAG chatbot, content personalization, translation) MUST be functional with real user value.
+**Rationale**: Core to hackathon scoring and demonstrates practical AI application in education.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### 4. Spec-Driven Excellence
+**Rule**: Development MUST follow Spec-Kit Plus methodology with proper documentation, planning, and Claude Code integration.
+**Rationale**: Explicitly required by hackathon specifications and ensures professional development practices.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### 5. User-Centric Experience
+**Rule**: Features MUST prioritize accessibility, personalized learning paths, and multilingual support.
+**Rationale**: Educational tools must adapt to diverse learning needs and demonstrate inclusive design.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### 6. Technical Robustness
+**Rule**: All systems MUST be production-ready with proper error handling, security, and performance optimization.
+**Rationale**: Hackathon judges will evaluate technical implementation quality and real-world viability.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+### Amendment Process
+Constitution changes require:
+1. Clear rationale aligned with hackathon goals
+2. Version increment following semantic versioning  
+3. Update of all dependent templates and documentation
+4. Validation against hackathon requirements
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+### Versioning Policy
+- MAJOR (x.0.0): Fundamental principle changes affecting hackathon strategy
+- MINOR (x.y.0): New principles supporting additional features
+- PATCH (x.y.z): Clarifications and refinements
+
+### Compliance Review
+All implementations MUST align with these principles and hackathon requirements before submission.
+
+---
+*This constitution guides all development decisions toward hackathon success and educational impact.*

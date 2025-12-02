@@ -8,8 +8,8 @@
  * - GenerateChapterContentOutput - The return type for the generateChapterContent function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { model } from '@/ai/genkit';
+import { z } from 'zod';
 
 const GenerateChapterContentInputSchema = z.object({
   topic: z.string().describe('The topic of the chapter to generate.'),
@@ -24,35 +24,26 @@ const GenerateChapterContentOutputSchema = z.object({
 export type GenerateChapterContentOutput = z.infer<typeof GenerateChapterContentOutputSchema>;
 
 export async function generateChapterContent(input: GenerateChapterContentInput): Promise<GenerateChapterContentOutput> {
-  return generateChapterContentFlow(input);
-}
+  try {
+    const prompt = `You are a helpful AI assistant that specializes in generating content for technical textbooks, specifically for Physical AI & Humanoid Robotics.
 
-const prompt = ai.definePrompt({
-  name: 'generateChapterContentPrompt',
-  input: {schema: GenerateChapterContentInputSchema},
-  output: {schema: GenerateChapterContentOutputSchema},
-  prompt: `You are a helpful AI assistant that specializes in generating content for technical textbooks, specifically for Physical AI & Humanoid Robotics.
+Based on the topic "${input.topic}", generate a chapter draft. Consider the outline, if provided, to structure the content. If there is existing content, expand and improve upon it.
 
-  Based on the topic {{topic}}, generate a chapter draft. Consider the outline, if provided, to structure the content. If there is existing content, expand and improve upon it.
+${input.outline ? `Outline: ${input.outline}\n` : ''}
+${input.existingContent ? `Existing Content: ${input.existingContent}\n` : ''}
 
-  Outline (if provided): {{{outline}}}
-  Existing Content (if provided): {{{existingContent}}}
+Ensure the content is well-structured, technically accurate, and suitable for a textbook format. Use examples, code snippets, and clear explanations where appropriate.
+The textbook is titled "PhysAI Handbook" and is meant to teach Physical AI & Humanoid Robotics.
+Pay close attention to the spec kit plus constitution.
+Follow all instructions to the letter.`;
 
-  Ensure the content is well-structured, technically accurate, and suitable for a textbook format. Use examples, code snippets, and clear explanations where appropriate.
-  The textbook is titled "PhysAI Handbook" and is meant to teach Physical AI & Humanoid Robotics.
-  Pay close attention to the spec kit plus constitution.
-  Follow all instructions to the letter.
-`,
-});
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const content = response.text();
 
-const generateChapterContentFlow = ai.defineFlow(
-  {
-    name: 'generateChapterContentFlow',
-    inputSchema: GenerateChapterContentInputSchema,
-    outputSchema: GenerateChapterContentOutputSchema,
-  },
-  async input => {
-    const {output} = await prompt(input);
-    return output!;
+    return { content };
+  } catch (error) {
+    console.error('Error in generateChapterContent:', error);
+    return { content: input.existingContent || "Error generating content. Please try again." };
   }
-);
+}
